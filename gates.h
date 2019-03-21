@@ -38,10 +38,19 @@ public:
     bool getOutput();
 };
 
-class nandGate : public
+class nandGate : public gate
 {
 public:
     nandGate(int inputSize);
-    bool gateOutput
+    bool getOutput();
 };
+
+class norGate : public gate
+{
+public:
+    norGate(int inputSize);
+    bool getoutput();
+};
+
+
 #endif
