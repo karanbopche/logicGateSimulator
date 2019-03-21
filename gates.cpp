@@ -49,3 +49,24 @@ bool orGate::getOutput(){
     return ret;
 }
 
+norGate::norGate(int inputSize) : gate(inputSize)   {}
+
+bool norGate::getOutput(){
+    bool ret = false;
+    if(numberOfInputs != populatedInputs)
+        return false;
+    for(int i=0;i<populatedInputs;i++)
+        ret |= inputs[i]->getOutput();
+    return !ret;
+}
+
+nandGate::nandGate(int inputSize) : gate(inputSize)   {}
+
+bool nandGate::getOutput(){
+    bool ret = true;
+    if(numberOfInputs != populatedInputs)
+        return false;
+    for(int i=0;i<populatedInputs;i++)
+        ret &= inputs[i]->getOutput();
+    return !ret;
+}
